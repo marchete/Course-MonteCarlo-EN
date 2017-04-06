@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 project (tests)
-add_executable(tests tests.cpp factorial.cpp)
+add_executable(tests tests.cpp circle.cpp rectangle.cpp irregular.cpp combo.cpp)
 
 # Includes Catch in the project:
 #add_subdirectory(catch)
