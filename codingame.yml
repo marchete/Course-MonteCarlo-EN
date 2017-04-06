@@ -1,6 +1,21 @@
 title : Content name
 plan:
-  - title: Part 1
-    statement: markdowns/part1.md
-  - title: Part 2
-    statement: markdowns/part2.md
+  - title: "What is Monte Carlo Method?"
+    statement: markdowns/intro.md
+  - title: "Calculating the area of a Circle"
+    statement: markdowns/circle.md
+  - title: "Calculating the area of a Rectangle"
+    statement: markdowns/rectangle.md
+  - title: "Irregular shapes"
+    statement: markdowns/irregular.md
+  - title: "Searching a combo"
+    statement: markdowns/combo.md
+  - title: "Final Words"
+    statement: markdowns/final.md
+
+projects:
+    montecarlo:
+        root: /projects/montecarlo
+        runner:
+            name: codingame/cmake-gcc-runner
+            version: 1.1.0-gcc-6.3
