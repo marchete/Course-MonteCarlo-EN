@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/rectangle/rectangle.cpp
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+

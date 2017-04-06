@@ -11,7 +11,7 @@ int main (int argc, char *argv[])
     }
   double inputValue = atof(argv[1]);
   double outputValue = sqrt(inputValue);
-  fprintf(stdout,"The square root of %g is %g\n",
+  fprintf(stdout,"Soy un rectangulo The square root of %g is %g\n",
           inputValue, outputValue);
   return 0;
 }

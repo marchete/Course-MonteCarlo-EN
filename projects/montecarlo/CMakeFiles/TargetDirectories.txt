@@ -1,0 +1,8 @@
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/CMakeFiles/edit_cache.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/CMakeFiles/rebuild_cache.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/circle/CMakeFiles/edit_cache.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/circle/CMakeFiles/rebuild_cache.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/circle/CMakeFiles/Circle.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/rectangle/CMakeFiles/edit_cache.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/rectangle/CMakeFiles/rebuild_cache.dir
+/home/usuario/COURSE/monte-carlo-method-in-7-minutes/projects/montecarlo/rectangle/CMakeFiles/Rectangle.dir
