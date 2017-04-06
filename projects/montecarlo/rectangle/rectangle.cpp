@@ -1,15 +1,10 @@
-// A simple program that computes the square root of a number
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-int main (int argc, char *argv[])
+#pragma GCC optimize("Ofast","unroll-loops","omit-frame-pointer","inline")
+#include <bits/stdc++.h> //All main STD libraries
+using namespace std;
+
+int main()
 {
-  if (argc < 2)
-    {
-    fprintf(stdout,"Usage: %s number\n",argv[0]);
-    return 1;
-    }
-  double inputValue = atof(argv[1]);
+  double inputValue = 23.0;
   double outputValue = sqrt(inputValue);
   fprintf(stdout,"Soy un rectangulo The square root of %g is %g\n",
           inputValue, outputValue);
