@@ -63,6 +63,7 @@ double MonteCarlo_CalcArea(const int& NoSimulations,Rectangle rect,Circle circle
 
 int main()
 {
+ {	 // Testing Circle inside Rectangle
   Rectangle rect(10,10,4600,3600);
   Circle circle(1800,1400,1000);
   for (int j = 0;j < 2;++j) //j==0 INTERSECTION , j==1 UNION
@@ -77,7 +78,9 @@ int main()
 	Simcount *=10;
    }
   }
-  
+ }
+ 
+ {	 // Testing Rectangle inside Circle 
   Rectangle rect(1800,1400,1000,1000);
   Circle circle(2800,2400,2000);
   for (int j = 0;j < 2;++j) //j==0 INTERSECTION , j==1 UNION
@@ -92,7 +95,9 @@ int main()
 	Simcount *=10;
    }
   }
-
+ }
+ 
+ {	 // Testing irregular shape, not a shape inside another completely
   Rectangle rect(10,10,3000,4000);
   Circle circle(2800,2400,2000);
   for (int j = 0;j < 2;++j) //j==0 INTERSECTION , j==1 UNION
@@ -107,7 +112,7 @@ int main()
 	Simcount *=10;
    }
   }
-  
+ }
   
   
   cout <<"Tests finished"<<endl;
