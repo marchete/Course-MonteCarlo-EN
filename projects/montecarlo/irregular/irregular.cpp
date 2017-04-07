@@ -45,16 +45,20 @@ double MonteCarlo_CalcArea(const int& NoSimulations,Rectangle rect,Circle circle
 	{
   	 for (int i=0;i < NoSimulations;++i)
 	 {
+	     int randx = rand()%Max_X;
+	     int randy = rand()%Max_Y;
 		//Each time we are inside both shapes - INTERSECTION
-		if ( rect.isInsideShape(rand()%Max_X,rand()%Max_Y ) && circle.isInsideShape(rand()%Max_X,rand()%Max_Y )) 
+		if ( rect.isInsideShape(randx,randy ) && circle.isInsideShape(randx,randy )) 
 			++areaCount; //Add 1 to the area count
 	  }
 	}
 	else 
 	  for (int i=0;i < NoSimulations;++i)
 	  {
+	     int randx = rand()%Max_X;
+	     int randy = rand()%Max_Y;	      
 		//Each time we are inside any shape - UNION
-		if ( rect.isInsideShape(rand()%Max_X,rand()%Max_Y ) || circle.isInsideShape(rand()%Max_X,rand()%Max_Y )) 
+		if ( rect.isInsideShape(randx,randy ) || circle.isInsideShape(randx,randy )) 
 			++areaCount; //Add 1 to the area count
 	  }
 	return ((double)Max_X*(double)Max_Y*(double)areaCount)/(double)(NoSimulations); //Then the area should be a % of the Max Area
@@ -81,7 +85,7 @@ int main()
  }
  
  {	 // Testing Rectangle inside Circle 
-  Rectangle rect(1800,1400,1000,1000);
+  Rectangle rect(2300,1900,1000,1000);
   Circle circle(2800,2400,2000);
   for (int j = 0;j < 2;++j) //j==0 INTERSECTION , j==1 UNION
   {
