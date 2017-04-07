@@ -28,6 +28,5 @@ Monte Carlo is a simple approach for problems that are easy to evaluate but hard
 
 *[Convulses]*
 ![Abs](abs.jpg) 
-<img src="abs.jpg">
 No! No, no, not 6! I said 7. Nobody's comin' up with 6. Who does Monte Carlo in 6 minutes? You won't even get your pseudorandom numbers seeded, not even a mouse on a wheel.
 7's the key number here. Think about it. 7-Elevens. 7 dwarves. 7, man, that's the number. 7 chipmunks twirlin' on a branch, eatin' lots of sunflowers on my uncle's ranch.
