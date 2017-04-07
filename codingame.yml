@@ -2,10 +2,10 @@ title : Content name
 plan:
   - title: "What is Monte Carlo Method?"
     statement: markdowns/intro.md
-  - title: "Calculating the area of a Circle"
-    statement: markdowns/circle.md
   - title: "Calculating the area of a Rectangle"
     statement: markdowns/rectangle.md
+  - title: "Calculating the area of a Circle"
+    statement: markdowns/circle.md
   - title: "Irregular shapes"
     statement: markdowns/irregular.md
   - title: "Searching a combo"

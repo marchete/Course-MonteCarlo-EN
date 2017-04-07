@@ -1,4 +1,4 @@
 # What is Monte Carlo Method?
 
-Bla bla bla
+Bla bla bla, but not very technical
 
