@@ -59,7 +59,7 @@ int main()
 {
   srand (time(NULL)); //Initialize random numbers      
   const char* a_to_z = "abcdefghijklmnoqrstuvwxyz";
-  for (int attempt = 0; attempt < 10; ++attempt)
+  for (int turn = 0; turn < 10; ++turn) //We just simulate 10 turns
   {
    int bestScore = -999999;
    string bestMove = "";
@@ -70,7 +70,7 @@ int main()
     string tmpMove;
 	for (int j=0;j < MOVE_SIZE;++j)
 	  tmpMove += (char)((uint8_t)('a')+rand() % 26);//a_to_z[rand() % 26];//Generate random move
-	//if (attempt == 9 && iterations == 1)  tmpMove = "codingame"; //Forcing codingame to appear
+	//if (turn == 9 && iterations == 1)  tmpMove = "codingame"; //Forcing codingame to appear
 	int tmpScore = eval(tmpMove);      //Evaluate move
 	if (tmpScore > bestScore)          //Keep best
 	{
@@ -79,7 +79,7 @@ int main()
 	}
 	++iterations;
    }
-   cout <<"Attempt:"<<attempt<< " Monte Carlo ended. Best Move was:'"<<bestMove;
+   cout <<"Turn:"<<turn<< " Monte Carlo ended. Best Move was:'"<<bestMove;
    cout<<"'. Best Score:"<<bestScore<<" N° of tests:"<<iterations<<endl;
   }
   return 0;

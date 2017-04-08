@@ -2,7 +2,7 @@
 
 I won't go into boring mathematical stuff. 
 Monte Carlo Method is named after the Monte Carlo Casino, as a clear reference to its random nature. 
-So the Method is just testing a lot of possible random solutions and just keep the best. 
+So the Method is just testing a lot of possible random solutions and keep the best. 
 
 In pseudo code that means:
 

@@ -4,7 +4,12 @@ In that example we have an hypothetical Scrabble game, with the following rules:
 
 ## Rules
 ** Movements **
+
 The basic move for a player consists of 9 letters (from `a` to `z`). They can be repeated.
+
+** Turn Limit **
+
+Turn time limit: 100ms
 
 ** Base Scoring ** 
 
@@ -23,7 +28,6 @@ The basic move for a player consists of 9 letters (from `a` to `z`). They can be
 
 The word 'codingame' gives 500 points.
 
-Time to give a move: 100ms
 
 ## Using Monte Carlo
 
@@ -33,6 +37,8 @@ Then we just need to randomize a lot of possible moves, evaluate them and keep t
 
 @[Search Combo]({"stubs": ["combo/combo.cpp"], "command": "./combo/Combo"})
 
-If you search closely, the Monte Carlo usually ends up with combos like `nomg`, because it's both `nom` and `omg` combo, and it's just 4 letters.
+If you look closely, the Monte Carlo method usually ends up with combos like `nomg`, because it's both `nom` and `omg` combo, and it's just 4 letters.
 
 On the other hand, it's highly unlikely that Monte Carlo retrieves the SuperCombo. The SuperCombo is an exact set of ordered characters. And as Monte Carlo is pure random, the chances of getting a SuperCombo is 1 in 25^9.
+
+Monte Carlo doesn't know anything about creating combos, he just make thousands of random moves and keeps the best.
