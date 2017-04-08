@@ -16,7 +16,7 @@ C++ is used on the Course, for performance reasons.
 Intermediate.
 
 ## Estimated Time:
-7 minutes!
+7 minutes. Can be a bit more if you review the C++ code and make your own tests.
 
 ## What will I learn?
 Students will learn a basic grasp about Monte Carlo Experiments.

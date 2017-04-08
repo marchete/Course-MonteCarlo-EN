@@ -20,7 +20,7 @@ It will be a rectangle, so we know that its area is just `Ref_Width*Ref_Height`.
 
 ## Placing shapes inside the reference area
 
-We need to place all our shapes inside that  `Reference Area`, they can't be outside because our Monte Carlo simulation will randomly test only inside that boundaries.
+We need to place all our shapes inside that `Reference Area`, they can't be outside because our Monte Carlo simulation will randomly test only inside that boundaries.
 
 ## Do the Monte Carlo experiments
 
@@ -37,7 +37,7 @@ The pseudocode is:
 Here we used a fixed number of simulations. This can be changed to be limited in time (like 100ms), then `N` will be increasing until you have no more time.
 
 ## Calculate the estimated area
-If you have areacount points that are inside shapes, and you total tests were N, then in theory your area is the `areacount/N`% of the  `Reference Area`.
+If you have `areacount` points that are inside shapes, and you total tests were `N`, then in theory your area is the `areacount/N`% of the `Reference Area`.
 ```csharp
  var RefArea = Ref_Width*Ref_Height;
  var PercentageFilled = areacount/N;
