@@ -2,13 +2,17 @@ title : Monte Carlo Method in 7 Minutes
 plan:
   - title: "What is Monte Carlo Method?"
     statement: markdowns/intro.md
-  - title: "Calculating the area of a Rectangle"
-    statement: markdowns/rectangle.md
-  - title: "Calculating the area of a Circle"
-    statement: markdowns/circle.md
-  - title: "Irregular shapes"
-    statement: markdowns/irregular.md
-  - title: "Searching a combo"
+  - title: "Calculating areas with Monte Carlo"
+    statement: markdowns/areacalc.md
+  - title: "Area Calculation - Simple Shapes"
+    statement: markdowns/simple.md
+  - title: "Area Calculation - Union"
+    statement: markdowns/union.md
+  - title: "Area Calculation - Intersection"
+    statement: markdowns/intersection.md
+  - title: "Area Calculation - Subtraction"
+    statement: markdowns/subtraction.md
+  - title: "Searching for a combo"
     statement: markdowns/combo.md
   - title: "Final Words"
     statement: markdowns/final.md

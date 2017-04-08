@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-add_subdirectory(circle)
-add_subdirectory(rectangle)
-add_subdirectory(irregular)
+add_subdirectory(simple)
+add_subdirectory(union)
+add_subdirectory(intersection)
+add_subdirectory(subtraction)
