@@ -26,7 +26,7 @@ Monte Carlo is a simple approach for problems that are easy to evaluate but hard
 
 ## That's good until someone releases a 6 minute explanation!
 
-[Abs](abs.jpg) 
+![Abs](abs.jpg) 
 *[Convulses]*
 
 No! No, no, not 6! I said 7. Nobody's comin' up with 6. Who does Monte Carlo in 6 minutes? You won't even get your pseudorandom numbers seeded, not even a mouse on a wheel.
