@@ -79,8 +79,8 @@ int main()
 	}
 	++iterations;
    }
-   cout <<"Turn:"<<turn<< " Monte Carlo ended. Best Move was:'"<<bestMove;
-   cout<<"'. Best Score:"<<bestScore<<" N° of tests:"<<iterations<<endl;
+   cout <<"Turn "<<turn<< ": Monte Carlo ended. Best Move was:'"<<bestMove;
+   cout<<"', Best Score:"<<bestScore<<", No of tests:"<<iterations<<endl;
   }
   return 0;
 }
