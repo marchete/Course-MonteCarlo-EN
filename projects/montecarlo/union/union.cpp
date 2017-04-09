@@ -139,7 +139,7 @@ void SendToJavascript(vector<Shape*>& shapes, const UnionType& uniontype){
  loadshapes.open("/project/target/loadshapes.js");
  loadshapes << "Max_X = "<<Max_X<<";"<<endl;
  loadshapes << "Max_Y = "<<Max_Y<<";"<<endl;
- loadshapes << "UnionType = "<<(int)UnionType<<"; //UNION=0 , INTERSECTION=1, SUBTRACTION=2"<<endl;
+ loadshapes << "UnionType = "<<(int)uniontype<<"; //UNION=0 , INTERSECTION=1, SUBTRACTION=2"<<endl;
  for (auto& shape:shapes)
   loadshapes << shape->getJavascript() <<endl;
  loadshapes.close();
