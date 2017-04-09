@@ -1,5 +1,6 @@
 #pragma GCC optimize("Ofast","unroll-loops","omit-frame-pointer","inline") //To enable optimizations in Codingame
 #include <bits/stdc++.h> //All main STD libraries
+#include <fstream>
 using namespace std;
 
 //Declaring area limits, shapes must be inside (0,0) and (Max_X,Max_Y) box.
@@ -21,6 +22,7 @@ public:
   Shape(){x=0.0;y=0.0;}
   Shape(double _x, double _y){ x=_x;y=_y;}
   virtual string getName() {return "Shape";} 
+  virtual string getJavascript(){return "";}
 /** 
  @brief Checks if a point it's inside the shape or not
  @param p_x p_y Coordinates of the point to be tested
@@ -49,11 +51,11 @@ public:
  Rectangle(int _x, int _y,int _w, int _h):Shape(_x,_y){ w=_w;h=_h; }
  
  string getName() {
-     
      string s = "Rectangle X:";
      return s+to_string(x)+" Y:"+to_string(y)+" W:"+to_string(w)+" H:"+to_string(h);
   } 
-     
+ string getJavascript()
+ { return "figuras.push(new Rectangle("+to_string(x)+","+to_string(y)+","+to_string(w)+","+to_string(h)+");";}     
  inline const bool isInsideShape (const double& p_x,const double& p_y)
  { 
    return (p_x >= x && p_y >= y && p_x < (x+w) && p_y < (y+h)); 
@@ -72,6 +74,8 @@ public:
   Circle(double _x, double _y,double _r):Shape(_x,_y){ x=_x;y=_y;radius = _r; radius2 = radius*radius; }
  
   string getName() {return "Circle";} 
+  string getJavascript() 
+  { return "figuras.push(new Circle("+to_string(x)+","+to_string(y)+","+to_string(radius)+");";}  
   inline const bool isInsideShape (const double& p_x,const double& p_y)
   {
 	 double squared_dist = (p_x - x)*(p_x - x)+(p_y - y)*(p_y - y); 
@@ -130,6 +134,17 @@ double MonteCarlo_CalcArea(const int& NoSimulations,vector<Shape*>& shapes, cons
 	return Reference_Area*PercentageFilled; //Then the area will be a % of the Reference Area
 }
 
+void SendToJavascript(vector<Shape*>& shapes, const UnionType& uniontype){
+ ofstream loadshapes;
+ loadshapes.open("/project/target/loadshapes.js");
+ loadshapes << "Max_X = "<<Max_X<<";"<<endl;
+ loadshapes << "Max_Y = "<<Max_Y<<";"<<endl;
+ loadshapes << "UnionType = "<<(int)UnionType<<"; //UNION=0 , INTERSECTION=1, SUBTRACTION=2"<<endl;
+ for (auto& shape:shapes)
+  loadshapes << shape->getJavascript() <<endl;
+ loadshapes.close();
+ cout << "CG> open --static-dir /project/target /visor.html"<<endl;
+}
 
 int main()
 {
@@ -139,6 +154,9 @@ int main()
   vector<Shape*> shapes;
   shapes.push_back(new Circle(60,60,50));
   shapes.push_back(new Rectangle(120,120,70,35));
+
+  //Send data to Javascript, for visualization
+  SendToJavascript(shapes, unionOperation);
   
   int Simcount = 10;
   cout << "Calculating the area:"<<endl;

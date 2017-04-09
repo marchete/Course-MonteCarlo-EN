@@ -1,0 +1,140 @@
+<!-- Reference visor - YOU DON'T NEED TO MODIFY ANYTHING ON THIS FILE! -->
+<!-- Shape definition and Union Type is defined in loadshapes.js       -->
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+    * {margin: 0;padding: 0;}
+    html,body {width: 100%;height: 100%;}
+    canvas{display: block;}
+  </style>
+  <title>Monte Carlo Area Visualizer</title>
+</head>
+
+ <body>
+  <canvas id="canvas" width="865" height="671"></canvas>
+<script type="text/javascript">
+ var Max_X = 200; //Will be updated in "loadshapes.js"
+ var Max_Y = 200;
+ var UnionType = 0; 
+
+//Object definition 
+ function Rectangle(_x,_y,_w,_h){ 
+	this.x=_x;this.y=_y;this.width=_w;this.height=_h;
+} 
+Rectangle.prototype.isInside=function(pointx,pointy){ 
+	return ( pointx >= this.x && pointx < (this.x+this.width)
+	      && pointy >= this.y && pointy < (this.y+this.height));
+} 
+function Circle(_x,_y,_r){ 
+	this.x=_x;this.y=_y;this.r=_r;this.r2=_r*_r;
+} 
+Circle.prototype.isInside=function(pointx,pointy){ 
+    var dist2 = (this.x-pointx)*(this.x-pointx)+(this.y-pointy)*(this.y-pointy);
+	return (dist2 <= this.r2);
+} 
+var figuras = []; //Will hold all shapes
+</script>  
+<script src="loadshapes.js"></script> 
+<script type="text/javascript">
+  var Reference_Area = Max_X * Max_Y; 
+  var canvas = document.getElementById('canvas'); //Canvas to draw
+  var ctx = canvas.getContext('2d');
+  var canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  var x0, y0, x1, y1;
+  var w=canvas.width;
+  var h=canvas.height;
+  var loops = canvas.width*canvas.height/500;
+  
+  function drawIt() {
+    loops = loops -1;
+	if (loops > 0)
+     window.requestAnimationFrame(drawIt);
+	//canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    for (i = 0; i < 1000; i++) {
+      var rx = Math.floor(Math.random() * w);
+      var ry = Math.floor(Math.random() * h);
+	  var test_x = (rx*Max_X)/w;
+	  var test_y = (ry*Max_Y)/h;
+	  var inside = figuras[0].isInside(test_x,test_y);
+	  if (figuras.length > 0)
+	  {
+	   if (UnionType==0)
+	   {
+		 for (j = 1; j < figuras.length; j++) {
+		  inside = inside || figuras[j].isInside(test_x,test_y);
+		 }
+	   }else if (UnionType==1)
+         { 	   
+  		  for (j = 1; j < figuras.length; j++) {
+		   inside = inside && figuras[j].isInside(test_x,test_y);
+		  }
+		 }
+		 else {
+  		   for (j = 1; j < figuras.length; j++) {
+		     inside = inside && !figuras[j].isInside(test_x,test_y);
+		   }
+		 }
+	  }
+      //Set Random Point inside the canvas x0,y0 and x1,y1	
+	  rx = rx+x0;
+	  ry = ry+y0;
+	  var idx = (ry * canvas.width + rx) * 4 ;
+	  //Draw points
+	  if (inside)
+	  {
+		canvasData.data[idx+0 ] = 0;
+		canvasData.data[idx+1 ] = 200; //G
+		canvasData.data[idx+2 ] = 0;
+   	  }
+  	  else
+	  {
+		canvasData.data[idx+0 ] = 230; //R
+		canvasData.data[idx+1 ] = 40;
+		canvasData.data[idx+2 ] = 40;
+	   }
+    }
+	//Update Canvas
+    ctx.putImageData(canvasData, 0, 0);
+  }
+
+  window.addEventListener('resize', resizeCanvas, false);
+  function resizeCanvas() {
+    //TODO: Allow w != h Atm it only uses equal width and height.
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    if (canvas.width <= canvas.height) {
+      x0 = 0;
+      y0 = 0;
+      x1 = canvas.width;
+      y1 = canvas.width;
+	  w = canvas.width;
+	  h = w;
+    } else {
+      x0 = (canvas.width - canvas.height) / 2;
+      y0 = 0;
+      x1 = canvas.height;
+      y1 = canvas.height;
+	  w = canvas.height;
+	  h = w;	  
+    }
+	ctx.globalAlpha = 1.0;
+	ctx.fillStyle="rgba(205, 205, 205, 1.0)";
+	ctx.strokeStyle="white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle="white";
+    ctx.rect(x0, y0, x1, y1);
+    ctx.stroke();
+	ctx.strokeStyle="black";
+    canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+	loops = canvas.width*canvas.height/500;
+    drawIt();	
+  }
+  resizeCanvas();
+</script>
+  
+ </body>
+</html>
+
+
