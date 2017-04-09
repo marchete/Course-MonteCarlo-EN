@@ -55,7 +55,7 @@ public:
      return s+to_string(x)+" Y:"+to_string(y)+" W:"+to_string(w)+" H:"+to_string(h);
   } 
  string getJavascript()
- { return "figuras.push(new Rectangle("+to_string(x)+","+to_string(y)+","+to_string(w)+","+to_string(h)+");";}     
+ { return "figuras.push(new Rectangle("+to_string(x)+","+to_string(y)+","+to_string(w)+","+to_string(h)+"));";}     
  inline const bool isInsideShape (const double& p_x,const double& p_y)
  { 
    return (p_x >= x && p_y >= y && p_x < (x+w) && p_y < (y+h)); 
@@ -75,7 +75,7 @@ public:
  
   string getName() {return "Circle";} 
   string getJavascript() 
-  { return "figuras.push(new Circle("+to_string(x)+","+to_string(y)+","+to_string(radius)+");";}  
+  { return "figuras.push(new Circle("+to_string(x)+","+to_string(y)+","+to_string(radius)+"));";}  
   inline const bool isInsideShape (const double& p_x,const double& p_y)
   {
 	 double squared_dist = (p_x - x)*(p_x - x)+(p_y - y)*(p_y - y); 
