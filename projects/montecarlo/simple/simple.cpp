@@ -153,7 +153,9 @@ int main()
   //Creating different shapes. All them must be inside limits [0..Max_X] and [0..Max_Y]    
   vector<Shape*> shapes;
   shapes.push_back(new Circle(60,60,50));
+  shapes.push_back(new Circle(60,150,30));
   shapes.push_back(new Rectangle(120,120,70,35));
+  shapes.push_back(new Rectangle(120,20,60,60));
 
   //Send data to Javascript, for visualization
   SendToJavascript(shapes, unionOperation);

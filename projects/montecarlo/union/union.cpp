@@ -149,14 +149,14 @@ void SendToJavascript(vector<Shape*>& shapes, const UnionType& uniontype){
 int main()
 {
   UnionType unionOperation = UnionType::UNION;
-  bool isDisjoint = true; //true; Set only to true when you are sure shapes are disjoint, and using the UNION type
+  bool isDisjoint = false; //true; Set only to true when you are sure shapes are disjoint, and using the UNION type
   //Creating different shapes. All them must be inside limits [0..Max_X] and [0..Max_Y]    
   vector<Shape*> shapes;
   shapes.push_back(new Circle(60,60,50));
   shapes.push_back(new Circle(115,60,50));
   shapes.push_back(new Rectangle(120,120,70,35));
-  shapes.push_back(new Rectangle(1,1,20,35));
-  shapes.push_back(new Rectangle(10,150,120,25));
+  shapes.push_back(new Rectangle(1,1,30,65));
+  shapes.push_back(new Rectangle(10,130,120,45));
   
   //Send data to Javascript, for visualization
   SendToJavascript(shapes, unionOperation);
